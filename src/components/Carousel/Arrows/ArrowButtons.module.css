@@ -1,0 +1,14 @@
+.button {
+    width: 2rem;
+    height: 2rem;
+    z-index: 1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .buttonSvg {
+    width: 2rem;
+    height: 2rem;
+  }

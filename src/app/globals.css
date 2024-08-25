@@ -1,0 +1,250 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root[data-theme='light'] {
+  --bgColor: #8ddbff; 
+  --navBarBackground: #9AD7FF;
+  --navBarGradientStart: #76C8FF;
+  --navBarGradientEnd: #00A4BA;
+  --textColor: #040D23;
+  --titleColor: #043A5E;
+  --borderColor: #005a5b;
+  --textShadow: 1px 1px 2px #035D9B, 0 0 2rem #043A5E, 0 0 1rem #01414a;
+}
+
+:root[data-theme='dark'] {
+  --bgColor: #040D23; 
+  --navBarBackground: #035D9B;
+  --navBarGradientStart: #043A5E;
+  --navBarGradientEnd: #01414a;
+  --textColor: #95B3FF; 
+  --titleColor: #35B4FE;
+  --borderColor: #00d5d9;
+  --textShadow: 1px 1px 2px #9AD7FF, 0 0 2rem #76C8FF, 0 0 1rem #00A4BA;
+  --textHover: white;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bgColor);
+}
+
+.navbar {
+  background: radial-gradient(circle at center, 
+  var(--navBarGradientStart), 
+  var(--navBarGradientEnd),
+  var(--navBarBackground)); 
+}
+
+
+/* containers */
+.area {
+  @apply mt-large
+}
+
+.bodyContainer {
+  @apply m-small md:m-medium; 
+}
+
+/* texts */
+.title {
+  @apply text-center text-xl font-Dela m-4 md:text-3xl;
+  color: var(--titleColor);
+  &:hover {
+    transition: 0.5s;
+    text-shadow: var(--textShadow);
+  }
+}
+.sub-title {
+  @apply text-center text-lg font-Dela md:text-2xl underline mb-4;
+  color: var(--titleColor)
+}
+.text {
+  color: var(--textColor);
+  @apply mt-2 text-center text-xs font-Sawarabi md:text-left md:text-xl ;
+}
+.redact {
+  color: var(--textColor);
+  @apply text-center text-xs font-Sawarabi p-4 md:text-2xl md:text-right;
+}
+
+/* buttons */
+
+.formButtonDark {
+  @apply flex justify-center items-center cursor-pointer rounded-md p-2 h-10 w-15rem font-Dela font-bold text-xl bg-dark-lightBlue2 transition duration-300 ease-in-out hover:shadow-xl hover:bg-dark-darkBlue2 hover:ring-2 hover:ring-dark-lightBlue1 hover:shadow-dark-lightBlue2;
+  color: var(--bgColor);
+  &:hover {
+    color: var(--textHover);
+  }
+}
+
+.formButtonLight {
+  @apply flex justify-center items-center cursor-pointer rounded-md p-2 h-10 w-15rem font-Dela font-bold text-xl bg-light-lightBlue2 transition duration-300 ease-in-out hover:shadow-xl hover:bg-light-darkBlue2 hover:ring-2 hover:ring-light-lightBlue1 hover:shadow-light-lightBlue2;
+  color: var(--textColor);
+  &:hover {
+    color: white;
+  }
+}
+
+.iconButtonDark {
+  @apply cursor-pointer rounded-full p-2 h-5rem w-5rem bg-dark-lightBlue2 transition duration-300 ease-in-out hover:shadow-xl hover:bg-dark-darkBlue2 hover:ring-2 hover:ring-dark-lightBlue1 hover:shadow-dark-lightBlue2;
+}
+
+.iconButtonLight {
+  @apply cursor-pointer rounded-full p-2 h-5rem w-5rem bg-light-lightBlue2 transition duration-300 ease-in-out hover:shadow-xl hover:bg-light-darkBlue2 hover:ring-2 hover:ring-light-lightBlue1 hover:shadow-light-lightBlue2;
+}
+
+.moveButton{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #043a5e;
+  border: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition-duration: 0.3s;
+  overflow: hidden;
+}
+
+.moveButton:hover {
+  width: 140px;
+  border-radius: 50px;
+  transition-duration: 0.5s;
+  background-color: var(--navBarBackground);
+  box-shadow: 0px 0px 0px 4px #00A4BA;
+  align-items: center;
+}
+
+.moveIcon {
+  width: 50px;
+  transition-duration: 0.5s;
+  color: white;
+}
+
+.moveButton:hover .moveIcon {
+  /* width: 20px; */
+  transition-duration: 0.5s;
+  transform: translateY(-200%);
+}
+
+.moveButton::before {
+  position: absolute;
+  bottom: -20px;
+  content: "Back to Top";
+  color: var(--textColor);
+  transition-duration: .3s;
+  font-size: 0px;
+}
+
+.moveButton:hover::before {
+  font-size: 14px;
+  opacity: 1;
+  bottom: unset;
+  transition-duration: 0.3s;
+}
+
+.navButtonDark {
+    @apply flex justify-center items-center cursor-pointer rounded-md px-5 py-2 font-Dela font-semibold text-xl bg-dark-lightBlue2 transition duration-300 ease-in-out hover:shadow-xl hover:bg-dark-darkBlue2 hover:ring-2 hover:ring-dark-lightBlue1 hover:shadow-dark-lightBlue2;
+    color: var(--bgColor);
+    &:hover {
+      color: var(--textHover);
+    }
+  }
+
+  .navButtonLight {
+    @apply flex justify-center items-center cursor-pointer rounded-md px-5 py-2 font-Dela font-semibold text-xl bg-light-lightBlue2 transition duration-300 ease-in-out hover:shadow-xl hover:bg-light-darkBlue2 hover:ring-2 hover:ring-light-lightBlue1 hover:shadow-light-lightBlue2;
+    color: var(--textColor);
+    &:hover {
+      color: white;
+    }
+  }
+
+  .redirButtonDark {
+    @apply flex justify-center items-center cursor-pointer rounded-md px-5 py-2 gap-4 h-12 w-3/4 bg-dark-lightBlue2 transition duration-300 ease-in-out hover:shadow-xl hover:bg-dark-darkBlue2 hover:ring-2 hover:ring-dark-lightBlue1 hover:shadow-dark-lightBlue2;
+  }
+
+  .redirButtonLight {
+    @apply flex justify-center items-center cursor-pointer rounded-md px-5 py-2 gap-4 h-12 w-3/4 bg-light-lightBlue2 transition duration-300 ease-in-out hover:shadow-xl hover:bg-light-darkBlue2 hover:ring-2 hover:ring-light-lightBlue1 hover:shadow-light-lightBlue2;
+  }
+
+
+/* content */
+
+.profile {
+  @apply sm:mt-8 rounded-full;
+  border-width: 2px;
+  border-color: var(--borderColor);
+}
+
+.projectsContainer {
+  @apply flex flex-col rounded-xl;
+  border-width: 2px;
+  background-color: var(--navBarBackground);
+  border-color: var(--borderColor);
+}
+
+.videoContainer {
+  @apply flex flex-col justify-center items-center md:grid grid-cols-2 p-2;
+
+}
+
+.video {
+  @apply w-4/5 h-8rem p-2 md:w-full md:h-20rem ;
+}
+
+.contactArea {
+  @apply flex flex-col md:grid grid-cols-2 gap-4 p-4 rounded-md;
+  background-color: var(--bgColor);
+  border-width: 2px;
+  border-color: var(--borderColor);
+}
+
+.links {
+  @apply m-2 flex flex-col justify-center items-center;
+  color: var(--textColor);
+}
+
+/* form */
+
+.contact-form {
+  @apply hidden md:flex flex-col justify-center px-4 h-full rounded-md;
+  background-color: var(--bgColor);
+  border-width: 2px;
+  border-color: var(--navBarGradientEnd);
+}
+.error-message {
+  @apply text-right font-Sawarabi text-lg text-red-700 md:text-xl;
+}
+
+.form-group {
+  @apply flex flex-col justify-start mx-4 mb-4;
+}
+
+.form-control {
+  background-color: var(--navBarBackground);
+  border-color: var(--borderColor);
+  border-radius: 6px;
+  border-width: 2px;
+  color: var(--textColor);
+  padding: 4px;
+}
+
+.group {
+  @apply grid grid-cols-2 gap-4;
+}
+
+/* notifs */
+.Toastify__toast--success{
+  @apply top-16 rounded-md p-2;
+}
+
+.Toastify__toast--error {
+  @apply top-16 rounded-md p-2;
+}
