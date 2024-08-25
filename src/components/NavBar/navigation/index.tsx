@@ -20,7 +20,7 @@ const NavBar: React.FC = () => {
         <ScrollLink to="projects" smooth={true} duration={500} className={buttonClass}>Projects</ScrollLink>
         <ScrollLink to="contact" smooth={true} duration={500} className={buttonClass}>Contact Me</ScrollLink>
         <button 
-          onClick={() => window.open("https://drive.google.com/file/d/1WluP00BgfoBYTNWBVjrCYz0BTgD6MUNl/view?usp=drive_link", "_blank")} 
+          onClick={() => window.open("https://drive.google.com/file/d/1T8NT_EGYrk8QEB_J15zszNTxlHDCppIl/view?usp=drive_link", "_blank")} 
           className={buttonClass}>
           My Resume
         </button>
