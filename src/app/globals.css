@@ -69,7 +69,11 @@ body {
 }
 .redact {
   color: var(--textColor);
-  @apply text-center text-xs font-Sawarabi p-4 md:text-2xl md:text-right;
+  @apply text-xs font-Sawarabi p-4 md:text-2xl md:text-start;
+}
+.redact-sm {
+  color: var(--textColor);
+  @apply text-xs font-Sawarabi p-4 md:text-lg md:text-start;
 }
 
 /* buttons */

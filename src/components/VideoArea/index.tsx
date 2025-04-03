@@ -1,12 +1,12 @@
 const VideoArea: React.FC = () => {
   return (
     <>
-      <div className="projectsContainer">
+      <section className="projectsContainer">
         <div className="videoContainer">
           <iframe
             className="video"
             src="https://youtube.com/embed/i4scN6wH3DQ"
-            title="Proyecto Integrador Nro. 3"
+            title="Integrator Project N° 3"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           />
@@ -22,7 +22,7 @@ const VideoArea: React.FC = () => {
           <iframe
             className="video"
             src="https://youtube.com/embed/DCmIK3eQYns"
-            title="Proyecto Integrador Nro. 4"
+            title="Integrator Project N° 4"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           />
@@ -37,7 +37,7 @@ const VideoArea: React.FC = () => {
           <iframe
             className="video"
             src="https://youtube.com/embed/2bcEALmt18g"
-            title="Presentación del Proyecto Final"
+            title="Final Project"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           />
@@ -50,7 +50,23 @@ const VideoArea: React.FC = () => {
             interfaces, modals, administrative sections, and tables.
           </p>
         </div>
-      </div>
+        <div className="videoContainer">
+          <iframe
+            className="video"
+            src="https://youtube.com/embed/mXecCxzYujg"
+            title="StockSaleApp Presentation"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+          <p className="redact">
+          This is a website developed for a client in my position as a Freelance Developer. On this site, the administrator or manager of the hardware store will be able to:<br/>
+          <p className="redact-sm">• Manage users, suppliers and their products.<br/>
+          • Manage the purchase/sale movements of the products, as well as their orders to resupply the store.<br/>
+          • Manage the income/expenses of the day, as well as the details of all the movements that have occurred.<br/>
+          • Receive notifications for products at the limit of stock to order their replenishment purchase.</p>
+          </p>
+        </div>
+      </section>
     </>
   );
 };
