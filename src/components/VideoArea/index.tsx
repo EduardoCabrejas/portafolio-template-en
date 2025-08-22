@@ -61,11 +61,11 @@ const VideoArea: FC = () => {
             <>
               <h1 className="redact-title">A.P.I.S. Deprogramming</h1>
               <p className="redact">
-                I developed a page for my mother's business, where the offered
-                activities, the team behind it, and the available services are
-                detailed. I implemented a reservation system that allows
-                registered users to schedule and cancel appointments according
-                to their needs.
+                I developed a page for my mother&apos;s business, where the
+                offered activities, the team behind it, and the available
+                services are detailed. I implemented a reservation system that
+                allows registered users to schedule and cancel appointments
+                according to their needs.
               </p>
             </>
           }
