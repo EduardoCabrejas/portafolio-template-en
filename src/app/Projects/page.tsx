@@ -1,33 +1,30 @@
 "use client";
-import { useTheme } from "@/context/themeContext";
+import React, { FC } from "react";
+import { motion } from "framer-motion";
+import { useIsMobile } from "@/hooks/useIsMobile";
 import VideoArea from "@/components/VideoArea/index";
-import gitH from '@/assets/icons/1 GitHub.png'
-import Image from "next/image";
 
-const Projects: React.FC = () => {
-  const { theme } = useTheme();
-  const buttonClass = theme === 'light' ? 'redirButtonLight' : 'redirButtonDark';
+const Projects: FC = () => {
+  const isMobile = useIsMobile();
+  const MotionWrapper = isMobile ? "div" : motion.div;
 
-    return (
-        <>
-        <div className="area">
-            <h1 className="title">Projects</h1>
-            <p className="text">During my period of study, I have gained an in-depth knowledge of various technologies and tools. However, I am still constantly looking for new opportunities to learn and apply what I am discovering through professional networks and developer communities. I am confident in my ability and accuracy in handling the next:</p>
-            <div className="mt-8">
-                <VideoArea/>
-            </div>
-            <div className="mt-8 flex flex-col justify-center md:grid grid-cols-[70%_30%] gap-4 items-center">
-            <p className="text">For those who are interested and want to know in detail about my projects, I leave you the link about my GitHub profile here:</p>
-            <button 
-          onClick={() => window.open("https://github.com/EduardoCabrejas", "_blank")} 
-          className={buttonClass}>
-            <Image src={gitH} alt="GitHub Icon" className="w-10 h-10 rounded-full" />
-          Go to GitHub
-        </button>
+  return (
+    <MotionWrapper
+      {...(!isMobile && {
+        initial: { opacity: 0, y: 30 },
+        whileInView: { opacity: 1, y: 0 },
+        transition: { duration: 0.6 },
+        viewport: { once: true, amount: 0.3 },
+      })}
+    >
+      <div>
+        <h1 className="title">Highlighted Projects</h1>
+        <div className="mt-2 md:mt-8">
+          <VideoArea />
         </div>
-        </div>
-        </>
-    )
-}
+      </div>
+    </MotionWrapper>
+  );
+};
 
 export default Projects;

@@ -1,7 +1,7 @@
 "use client";
-import styles from "./ArrowButtons.module.css";
+import React, { ComponentPropsWithRef, useCallback, useEffect, useState, FC } from "react";
 import { EmblaCarouselType } from "embla-carousel";
-import React, { ComponentPropsWithRef, useCallback, useEffect, useState } from "react";
+import styles from "./ArrowButtons.module.css";
 
 type UsePrevNextButtonsType = {
   prevBtnDisabled: boolean;
@@ -51,7 +51,7 @@ export const usePrevNextButtons = (
 
 type PropType = ComponentPropsWithRef<"button">;
 
-export const PrevButton: React.FC<PropType> = (props) => {
+export const PrevButton: FC<PropType> = (props) => {
   const { children, ...restProps } = props;
 
   return (
@@ -71,7 +71,7 @@ export const PrevButton: React.FC<PropType> = (props) => {
   );
 };
 
-export const NextButton: React.FC<PropType> = (props) => {
+export const NextButton: FC<PropType> = (props) => {
   const { children, ...restProps } = props;
 
   return (

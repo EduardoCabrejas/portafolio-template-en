@@ -1,73 +1,77 @@
-const VideoArea: React.FC = () => {
+import React, { FC } from "react";
+import VideoCard from "./VideoCard";
+
+const VideoArea: FC = () => {
   return (
-    <>
-      <section className="projectsContainer">
-        <div className="videoContainer">
-          <iframe
-            className="video"
-            src="https://youtube.com/embed/i4scN6wH3DQ"
-            title="Integrator Project N° 3"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
-          <p className="redact">
-            In my third Integrative Project, I developed a page for the
-            my mother&apos;s entrepreneurship, where the activities are detailed
-            offered, the team behind and the services available. Implemented
-            a booking system that allows registered users
-            Schedule and cancel appointments according to your needs.
-          </p>
-        </div>
-        <div className="videoContainer">
-          <iframe
-            className="video"
-            src="https://youtube.com/embed/DCmIK3eQYns"
-            title="Integrator Project N° 4"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
-          <p className="redact">
-            In my last Integrative Project, I designed a specialized e-commerce
-            on Apple products. Registered users can browse and
-            search for products in detail, add items to the
-            purchases, place orders, and cancel orders if desired.
-          </p>
-        </div>
-        <div className="videoContainer">
-          <iframe
-            className="video"
-            src="https://youtube.com/embed/2bcEALmt18g"
-            title="Final Project"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
-          <p className="redact">
-            In my final project, together with my team, we created a platform of
-            streaming for E-sports tournaments. Users can view
-            tournaments, form teams and join competitions. I contributed to
-            the development of multiple elements, such as buttons, banners,
-            business cards, filters, forms, charts,
-            interfaces, modals, administrative sections, and tables.
-          </p>
-        </div>
-        <div className="videoContainer">
-          <iframe
-            className="video"
-            src="https://youtube.com/embed/mXecCxzYujg"
-            title="StockSaleApp Presentation"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
-          <p className="redact">
-          This is a website developed for a client in my position as a Freelance Developer. On this site, the administrator or manager of the hardware store will be able to:<br/>
-          <p className="redact-sm">• Manage users, suppliers and their products.<br/>
-          • Manage the purchase/sale movements of the products, as well as their orders to resupply the store.<br/>
-          • Manage the income/expenses of the day, as well as the details of all the movements that have occurred.<br/>
-          • Receive notifications for products at the limit of stock to order their replenishment purchase.</p>
-          </p>
-        </div>
-      </section>
-    </>
+    <section className="flex flex-col rounded-xl border-2 border-[var(--borderColor)] bg-[var(--navBarBackground)]">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4 mx-4">
+        <VideoCard
+          src="https://youtube.com/embed/mXecCxzYujg"
+          description={
+            <>
+              <h1 className="redact-title">StockSaleApp Website</h1>
+              <p className="redact">
+                A website to manage a hardware store. Freelance project worked
+                with .NET, C#, and JavaScript.
+              </p>
+              <ul className="redact list-disc pl-4 mt-2">
+                <li>Manage users, suppliers, and their products.</li>
+                <li>Manage the buying and selling movements.</li>
+                <li>Manage turns for users and providers.</li>
+                <li>Be alert for products that are low in stock.</li>
+              </ul>
+            </>
+          }
+        />
+        <VideoCard
+          src="https://youtube.com/embed/2bcEALmt18g"
+          description={
+            <>
+              <h1 className="redact-title">Stream Games Tournaments</h1>
+              <p className="redact">
+                A streaming platform for E-sports tournaments, where you can
+                watch tournaments, form teams, and join competitions. I
+                contributed significantly to the Frontend, specifically in
+                buttons, banners, cards, filters, forms, interfaces, modals, and
+                other things.
+              </p>
+            </>
+          }
+        />
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-4 mx-4">
+        <VideoCard
+          src="https://youtube.com/embed/DCmIK3eQYns"
+          description={
+            <>
+              <h1 className="redact-title">E-commerce Apple Products</h1>
+              <p className="redact">
+                I designed an e-commerce site specialized in Apple products.
+                Once registered, users can explore to find available products,
+                analyze them in detail, add items to the shopping cart, place
+                orders, and cancel orders if they wish.
+              </p>
+            </>
+          }
+        />
+        <VideoCard
+          src="https://youtube.com/embed/i4scN6wH3DQ"
+          description={
+            <>
+              <h1 className="redact-title">A.P.I.S. Deprogramming</h1>
+              <p className="redact">
+                I developed a page for my mother's business, where the offered
+                activities, the team behind it, and the available services are
+                detailed. I implemented a reservation system that allows
+                registered users to schedule and cancel appointments according
+                to their needs.
+              </p>
+            </>
+          }
+        />
+      </div>
+    </section>
   );
 };
 

@@ -1,38 +1,31 @@
-import AboutMe from "./Home/page";
+import AboutMe from "./AboutMe/page";
 import { Suspense } from "react";
+import Experience from './Experience/page';
+import Education from "./Education/page";
 import Skills from "./Skills/page";
 import Projects from "./Projects/page";
-import Contact from "./Contact/page";
+import Loader from "@/components/Loader";
 
 export default function Home() {
   return (
     <>
-      <Suspense
-        fallback={
-          <div>
-            <div className="flex-col gap-4 w-full flex items-center justify-center">
-              <div className="w-20 h-20 border-4 border-transparent text-lightBlue3 text-4xl animate-spin flex items-center justify-center border-t-lightBlue2 rounded-full">
-                <div className="w-16 h-16 border-4 border-transparent text-darkBlue3 text-2xl animate-spin flex items-center justify-center border-t-darkBlue2 rounded-full"></div>
-              </div>
-            </div>
-            <p className="suspense">Loading Portfolio...</p>
-          </div>
-        }
+      <Suspense fallback={<Loader/>}
       >
-        <div className="bodyContainer">
-        <div id="about-me">
-          <AboutMe />
-        </div>
-        <div id="skills">
-          <Skills />
-        </div>
-        <div id="projects">
-        <Projects />
-        </div>
-        <div id="contact">
-          <Contact />
-        </div>
-        </div>
+          <section id="about-me" className="md:mt-8">
+            <AboutMe />
+          </section>
+          <section id="experience" className="mt-8 md:mt-12">
+            <Experience />
+          </section>
+          <section id="education" className="mt-8 md:mt-12">
+            <Education />
+          </section>
+          <section id="skills" className="mt-8 md:mt-12">
+            <Skills />
+          </section>
+          <section id="projects" className="mt-8 md:mt-12">
+            <Projects />
+          </section>
       </Suspense>
     </>
   );
